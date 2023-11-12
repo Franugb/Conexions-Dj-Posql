@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos</title>
+</head>
+<body>
+    <h1>Datos</h1>
+    <h2>Carreras</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+        </tr>
+        {% for carrera in carreras %}
+        <tr>
+            <td>{{ carrera.id_carrera }}</td>
+            <td>{{ carrera.nombre_carrera }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Profesores</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+        </tr>
+        {% for profesor in profesores %}
+        <tr>
+            <td>{{ profesor.id_profesor }}</td>
+            <td>{{ profesor.nombre }}</td>
+            <td>{{ profesor.apellido }}</td>
+            <td>{{ profesor.correo }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Estudiantes</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Carrera</th>
+        </tr>
+        {% for estudiante in estudiantes %}
+        <tr>
+            <td>{{ estudiante.id_estudiante }}</td>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.apellido }}</td>
+            <td>{{ estudiante.edad }}</td>
+            <td>{{ estudiante.carrera.nombre_carrera }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Asignaturas</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Profesor</th>
+            <th>Carrera</th>
+        </tr>
+        {% for asignatura in asignaturas %}
+        <tr>
+            <td>{{ asignatura.id_asignatura }}</td>
+            <td>{{ asignatura.nombre_asignatura }}</td>
+            <td>{{ asignatura.profesor.nombre }} {{ asignatura.profesor.apellido }}</td>
+            <td>{{ asignatura.carrera.nombre_carrera }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
